@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - Ponpes Moderat At-Thohiriyah</title>
+    <link rel="stylesheet" href="pendaftaran.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lambang ppm.jpeg" alt="Logo Ponpes" />
+            <div class="nama-lembaga">
+                <h1>Pondok Pesantren Moderat At-Thohiriyah</h1>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index_user.html">BERANDA</a></li>
+                <li class="dropdown">
+                    <a href="profile.html">PROFILE</a>
+                    <div class="dropdown-content">
+                        <a href="#">Visi & Misi</a>
+                        <a href="#">Struktur</a>
+                        <a href="#">Sejarah</a>
+                    </div>
+                </li>
+                <li><a href="kegiatan.html">KEGIATAN</a></li>
+                <li><a class="active" href="pendaftaran.html">PENDAFTARAN</a></li>
+                <li><a href="hasil_seleksi_user.html">HASIL SELEKSI</a></li>
+                <li><a href="kontak.html">KONTAK</a></li>
+                <li><a href="logout_user.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h2>Formulir Pendaftaran Santri Baru</h2>
+        <form action="#" method="post" class="form-pendaftaran">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="nik">NIK (Nomor Induk Kependudukan):</label>
+            <input type="text" id="nik" name="nik" required>
+
+            <label for="tempat_lahir">Tempat Lahir:</label>
+            <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+
+            <label for="tanggal_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+
+            <label for="alamat">Alamat Lengkap:</label>
+            <textarea id="alamat" name="alamat" rows="3" required></textarea>
+
+            <label for="alamat_email">Alamat Email:</label>
+            <input type="text" id="alamat_email" name="alamat_email" required>
+
+            <label for="asal_sekolah">Asal Sekolah:</label>
+            <input type="text" id="asal_sekolah" name="asal_sekolah" required>
+
+            <label for="nomor_hp">Nomor HP:</label>
+            <input type="text" id="nomor_hp" name="nomor_hp" required>
+
+            
+            <label for="tanggal_lahir">Tanggal daftar:</label>
+            <input type="date" id="tanggal_daftar" name="tanggal_daftar" required>
+
+            <button type="submit">Kirim Pendaftaran</button>
+        </form>
+    </main>
+</body>
+</html>

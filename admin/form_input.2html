@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Input Pendaftar</title>
+</head>
+<body>
+    <h2>Form Input Pendaftar</h2>
+    <form action="simpan_data.php" method="POST">
+        Nama:<br>
+        <input type="text" name="nama"><br><br>
+
+        Kelas:<br>
+        <select name="kelas">
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+        </select><br><br>
+
+        Nilai Akademik:<br>
+        <input type="number" name="akademik"><br><br>
+
+        IQ:<br>
+        <input type="number" name="iq"><br><br>
+
+        Keagamaan:<br>
+        <input type="number" name="agama"><br><br>
+
+        Keterampilan:<br>
+        <input type="number" name="keterampilan"><br><br>
+
+        <input type="submit" value="Simpan">
+    </form>
+</body>
+</html>

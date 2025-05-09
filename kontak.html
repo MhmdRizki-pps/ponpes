@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Ponpes Moderat At-Thohiriyah</title>
+    <link rel="stylesheet" href="kontak.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lambang ppm.jpeg" alt="Logo Ponpes" />
+            <div class="nama-lembaga">
+                <h1>Pondok Pesantren Moderat At-Thohiriyah</h1>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index_user.html">BERANDA</a></li>
+                <li class="dropdown">
+                    <a href="profile.html">PROFILE</a>
+                    <div class="dropdown-content">
+                        <a href="#">Visi & Misi</a>
+                        <a href="#">Struktur</a>
+                        <a href="#">Sejarah</a>
+                    </div>
+                </li>
+                <li><a href="kegiatan.html">KEGIATAN</a></li>
+                <li><a href="pendaftaran.html">PENDAFTARAN</a></li>
+                <li><a href="hasil_seleksi_user.html">HASIL SELEKSI</a></li>
+                <li><a class="active" href="kontak.html">KONTAK</a></li>
+                <li><a href="logout_user.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <img class="main-image" src="ppm.jpeg" alt="Gedung Ponpes">
+    </main>
+
+    <main class="kontak-container">
+        <h2>Hubungi Kami</h2>
+        <div class="kontak-info">
+            <p><strong>Alamat:</strong> Jalan Raya Cilegon 42161 Serang Banten</p>
+            <p><strong>Email:</strong> at-thohiriyah@gmail.com</p>
+            <p><strong>Telepon:</strong> +62 812-3456-7890</p>
+        </div>
+
+        <h3>Kirim Pesan</h3>
+        <form action="#" method="post" class="form-kontak">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </main>
+</body>
+</html>

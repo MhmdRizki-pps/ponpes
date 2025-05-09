@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Kelola Hasil Seleksi</title>
+    <link rel="stylesheet" href="admin_hasil_seleksi.css">
+    <style>
+        .admin-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        .form-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .form-inline input, .form-inline select, .form-inline button {
+            flex: 1;
+        }
+
+        .btn-edit, .btn-delete {
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .btn-edit { background-color: #3498db; }
+        .btn-delete { background-color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Kelola Hasil Seleksi Santri</h2>
+
+        <div class="form-inline">
+            <input type="text" id="nama" placeholder="Nama">
+            <input type="text" id="nomor" placeholder="No. Pendaftaran">
+            <select id="status">
+                <option value="Lulus">Lulus</option>
+                <option value="Tidak Lulus">Tidak Lulus</option>
+            </select>
+            <button onclick="tambahData()">Tambah</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>No. Pendaftaran</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-body">
+                <!-- Data akan ditambahkan lewat JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let data = [];
+
+        function renderTable() {
+            const tbody = document.getElementById("tabel-body");
+            tbody.innerHTML = "";
+            data.forEach((item, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.nama}</td>
+                        <td>${item.nomor}</td>
+                        <td>${item.status}</td>
+                        <td>
+                            <button class="btn-edit" onclick="editData(${index})">Edit</button>
+                            <button class="btn-delete" onclick="hapusData(${index})">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function tambahData() {
+            const nama = document.getElementById("nama").value;
+            const nomor = document.getElementById("nomor").value;
+            const status = document.getElementById("status").value;
+
+            if (nama && nomor) {
+                data.push({ nama, nomor, status });
+                renderTable();
+                document.getElementById("nama").value = "";
+                document.getElementById("nomor").value = "";
+            } else {
+                alert("Nama dan Nomor Pendaftaran harus diisi.");
+            }
+        }
+
+        function hapusData(index) {
+            if (confirm("Yakin ingin menghapus data ini?")) {
+                data.splice(index, 1);
+                renderTable();
+            }
+        }
+
+        function editData(index) {
+            const item = data[index];
+            const nama = prompt("Edit Nama:", item.nama);
+            const nomor = prompt("Edit No. Pendaftaran:", item.nomor);
+            const status = prompt("Edit Status (Lulus/Tidak Lulus):", item.status);
+
+            if (nama && nomor && (status === "Lulus" || status === "Tidak Lulus")) {
+                data[index] = { nama, nomor, status };
+                renderTable();
+            } else {
+                alert("Data tidak valid.");
+            }
+        }
+
+        // Awal render
+        renderTable();
+    </script>
+</body>
+</html>
